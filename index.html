@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>GifTastic Homework</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-pink.min.css" />
+<link rel="stylesheet" href="assets/css/giftasticstyle.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <h2>GifTastic TV Shows Search</h2>
+
+<!-- Rendered Buttons will get Dumped Here  -->
+<div id="buttons-view"></div>
+
+<!--capture user input -->  
+    <form id="gifs-form">
+      <label for="gifs-input">Add a TV Show</label>
+      <input type="text" id="gifs-input"><br>
+
+      <!-- Button triggers new topic to be added -->
+      <input id="add-gifs" type="submit" value="Add a Topic" button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary">
+    </form>
+    
+<!-- gifs will display here -->
+<div id="gifs-view"></div>
+
+
+<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="assets/js/giftastic.js"></script>
+<div id="container"/>
+</div>
+</body>
+</html>

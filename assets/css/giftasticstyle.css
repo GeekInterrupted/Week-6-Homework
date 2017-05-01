@@ -1,0 +1,29 @@
+body {
+    background-color: #ececec;
+    background-repeat: repeat;
+    color: #009688;
+ }
+
+.topic-display {
+    display: inline-block;
+  }
+
+h2 {
+    color: #00635A;
+    font-weight: 200;
+}
+
+.img-card-square.mdl-card {
+  width: 320px;
+  height: 320px;
+  display: inline-block;
+
+}
+.img-card-square > .mdl-card__title {
+  color: #000000;
+}
+
+div, form, input, button {
+   margin: 10px;
+}
+
