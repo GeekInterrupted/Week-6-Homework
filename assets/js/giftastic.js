@@ -5,10 +5,7 @@ var topics = ["The Big Bang Theory", "NCIS", "Green Arrow"];
 // Function for displaying topics data
 function renderButtons() {
 
-
-       
 $("#buttons-view").empty();
-
 
 // Looping through the array of topics
         for (var i = 0; i < topics.length; i++) {
@@ -58,7 +55,29 @@ $("button").on("click", function() {
                 var rating = topicsResults[i].rating;
                 var p = $("<div class = 'mdl-card__supporting-text'>").text("Rating: " + rating + "  " + giphy);
                 var giphyImage = $("<img>");
-                giphyImage.attr("src", topicsResults[i].images.fixed_height.url);
+                giphyImage.attr("src", topicsResults[i].images.fixed_height_still.url);
+                giphyImage.attr("data-state", "still");
+                giphyImage.attr("data-still", topicsResults[i].images.fixed_height_still.url);
+                giphyImage.attr("data-animate", topicsResults[i].images.fixed_height.url);
+                giphyImage.addClass("gif");
+                
+                //this makes the gifs go onn-off
+                $(".gif").on("click", function() {
+                // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+                var state = $(this).attr("data-state");
+                // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+                // Then, set the image's data-state to animate
+                // Else set src to the data-still value
+                if (state === "still") {
+                $(this).attr("src", $(this).attr("data-animate"));
+                $(this).attr("data-state", "animate");
+                } else {
+                $(this).attr("src", $(this).attr("data-still"));
+                $(this).attr("data-state", "still");
+                }
+                });
+
+                  
                 topicDisplay.append(p);
                 topicDisplay.append(giphyImage);
                 $("#gifs-view").append(topicDisplay);
@@ -68,7 +87,6 @@ $("button").on("click", function() {
 }
 
 )} //end displayGiphy
-
 
       //This function handles events where one button is clicked
       $("#add-gifs").on("click", function(event) {
@@ -92,5 +110,3 @@ $("button").on("click", function() {
       });
       //call renderButtons function to display the initial buttons
       renderButtons();
-     
-
